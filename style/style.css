@@ -1,0 +1,31 @@
+body {
+  background-color: white;
+  box-sizing: border-box;
+  border: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  body .header {
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    box-shadow: 0 1px 0 0 #110038; }
+    body .header p {
+      margin: 0px;
+      padding: 3px 0px 4px 7px;
+      font-family: "ChakraPetch-Regular", sans-serif;
+      font-size: 12px;
+      color: #FFFFFF;
+      letter-spacing: 0; }
+  body section {
+    display: flex;
+    justify-content: center; }
+    body section div {
+      width: 85%; }
+      body section div .banner {
+        width: 100%; }
+        body section div .banner img {
+          margin-top: 35px;
+          width: 102.6px;
+          height: 64px; }
+
+/*# sourceMappingURL=style.css.map */
