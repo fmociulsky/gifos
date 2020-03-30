@@ -19,13 +19,68 @@ body {
   body section {
     display: flex;
     justify-content: center; }
-    body section div {
+    body section .banner {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 35px;
+      margin-bottom: 16px;
       width: 85%; }
-      body section div .banner {
+      body section .banner .logo {
         width: 100%; }
-        body section div .banner img {
-          margin-top: 35px;
+        body section .banner .logo img {
           width: 102.6px;
           height: 64px; }
+      body section .banner .botones {
+        display: flex;
+        align-items: center; }
+        body section .banner .botones button {
+          padding: 0px;
+          font-family: "ChakraPetch-Regular", sans-serif;
+          color: #110038;
+          letter-spacing: 0;
+          text-align: center;
+          line-height: 18px;
+          font-size: 16px;
+          width: 144px;
+          height: 36px;
+          margin-right: 16px;
+          background: #F7C9F3;
+          border: 1px solid #110038;
+          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF; }
+        body section .banner .botones button:hover {
+          background: #E6BBE2;
+          border: 1px solid #110038;
+          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF; }
+        body section .banner .botones button:active {
+          color: #110038;
+          background: #E6BBE2;
+          border: 1px solid #110038;
+          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF; }
+        body section .banner .botones .elegir {
+          display: flex;
+          margin-right: 16px; }
+          body section .banner .botones .elegir button {
+            margin-right: 0px; }
+          body section .banner .botones .elegir .flecha {
+            width: 36px; }
+        body section .banner .botones .opciones {
+          display: none; }
+        body section .banner .botones a {
+          text-decoration: none;
+          width: 76px;
+          font-family: "ChakraPetch-Regular", sans-serif;
+          color: #110038;
+          font-size: 16px;
+          letter-spacing: 0;
+          line-height: 18px; }
+        body section .banner .botones a:hover {
+          padding-top: 9px;
+          padding-bottom: 9px;
+          border: 1px solid #110038; }
+        body section .banner .botones a:active {
+          color: #110038;
+          border: 0px; }
+        body section .banner .botones a::first-letter {
+          text-decoration: underline; }
 
 /*# sourceMappingURL=style.css.map */

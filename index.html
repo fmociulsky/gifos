@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
+    <script rel="text/javascript" src="js/apps.js"></script>
     <title>GifOS</title>
 </head>
 <body>
@@ -12,9 +13,23 @@
         <p>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas:</p>
     </div>
     <section id="main">
-        <div>
-            <div class="banner">
+        <div class="banner">
+            <div class="logo">
                 <img src="assets/gifOF_logo.png" alt="gif.OS">
+            </div>
+            <div class="botones">
+                <button class="boton">Crear Guifos</button>
+                <div>
+                    <div class="elegir">
+                        <button class="boton">Elegir Tema</button>
+                        <button class="boton flecha" onclick="mostrarOpciones()"><img src="/assets/dropdown.svg" alt="Elegir Tema"></button>
+                    </div>
+                    <div class="opciones">
+                        <button class="boton">Sailor Day</button>
+                        <button class="boton">Sailor Night</button>
+                    </div>
+                </div>
+                <a href="">Mis Gifos</a>
             </div>
             
         </div>
