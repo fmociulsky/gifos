@@ -1,3 +1,108 @@
+.boton {
+  font-family: "ChakraPetch-Regular", sans-serif;
+  color: #110038;
+  letter-spacing: 0;
+  line-height: 18px;
+  font-size: 16px;
+  min-width: 144px;
+  min-height: 36px;
+  max-height: 36px;
+  background: #F7C9F3;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF; }
+
+.boton:hover {
+  background: #E6BBE2;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF; }
+
+.boton:active {
+  color: #110038;
+  background: #E6BBE2;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF; }
+
+.arrow {
+  min-width: 36px; }
+
+.opciones {
+  display: none;
+  max-width: 160px;
+  background: #E6E6E6;
+  box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
+
+.body_light .buscador {
+  background: #E6E6E6;
+  box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
+  .body_light .buscador .header {
+    font-family: ChakraPetch-Bold;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%); }
+  .body_light .buscador input {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+    font-family: "ChakraPetch-Regular", sans-serif;
+    font-size: 16px;
+    color: #B4B4B4;
+    letter-spacing: 0;
+    line-height: 22px; }
+.body_light .sugerencia {
+  background: #FFFAFE;
+  border: 1px solid #E6BBE2;
+  box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D; }
+  .body_light .sugerencia label {
+    font-family: "ChakraPetch-Regular", sans-serif;
+    font-size: 14px;
+    color: #110038;
+    letter-spacing: 0; }
+
+.body_night .buscador {
+  background: #E6E6E6;
+  box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
+  .body_night .buscador .header {
+    font-family: ChakraPetch-Bold;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%); }
+  .body_night .buscador input {
+    width: 100%;
+    background: #000000;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+    font-family: "ChakraPetch-Regular", sans-serif;
+    font-size: 16px;
+    color: #B4B4B4;
+    letter-spacing: 0;
+    line-height: 22px; }
+
+/*a{
+    margin: 5px 0px 0px 16px;
+    text-decoration: none;
+    min-width: 76px;
+    font-family: $font;
+    color: $color;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 18px;
+    border: 1px solid white;
+}
+a:hover{
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border: 1px solid $color;
+}
+a:active{
+    color:$color;
+    border: 0px;
+}
+a::first-letter{
+    text-decoration: underline;
+}*/
 body {
   background-color: white;
   box-sizing: border-box;
@@ -5,82 +110,93 @@ body {
   margin: 0px;
   display: flex;
   flex-direction: column;
-  justify-content: center; }
-  body .header {
+  justify-content: center;
+    /*section{
+        display: flex;
+        justify-content: center;
+        .banner{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 35px;
+            margin-bottom: 16px;
+            width: 85%;
+            .logo{
+                width: 100%;
+                img{
+                    width: 102.6px;
+                    height: 64px;
+                }    
+            }
+            .botones{
+                display: flex;
+
+                button{
+                    padding: 0px;
+                    font-family: $font;
+                    color: $color;
+                    letter-spacing: 0;
+                    text-align: center;
+                    line-height: 18px;
+                    font-size: 16px;
+                    min-width: 144px;
+                    min-height: 36px;
+                    max-height: 36px;
+                    margin-right: 16px;
+                    background: #F7C9F3;
+                    border: 1px solid $color;
+                    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+                }
+
+                button:hover{
+                    background: #E6BBE2;
+                    border: 1px solid $color;
+                    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+                }
+
+                button:active{
+                    color: $color;
+                    background: #E6BBE2;
+                    border: 1px solid $color;
+                    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+                }
+
+                .elegir{
+                    display: flex;
+                    button{
+                        margin-right: 0px;
+                    }
+                    .flecha{
+                        min-width: 36px;
+                    }
+                }
+
+                .opciones{
+                    display: none;
+                    flex-direction: column;
+                    max-width: 160px;
+                    background: #E6E6E6;
+                    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+                    text-align: center;
+                    padding: 10px 10px 0px 10px; 
+                    button{
+                        margin-right: 0px;
+                        margin-bottom: 10px;
+                    }
+                }
+
+                
+            }
+        }
+    }*/ }
+  body .titulo {
     background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
     box-shadow: 0 1px 0 0 #110038; }
-    body .header p {
+    body .titulo p {
       margin: 0px;
       padding: 3px 0px 4px 7px;
       font-family: "ChakraPetch-Regular", sans-serif;
       font-size: 12px;
       color: #FFFFFF;
       letter-spacing: 0; }
-  body section {
-    display: flex;
-    justify-content: center; }
-    body section .banner {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 35px;
-      margin-bottom: 16px;
-      width: 85%; }
-      body section .banner .logo {
-        width: 100%; }
-        body section .banner .logo img {
-          width: 102.6px;
-          height: 64px; }
-      body section .banner .botones {
-        display: flex;
-        align-items: center; }
-        body section .banner .botones button {
-          padding: 0px;
-          font-family: "ChakraPetch-Regular", sans-serif;
-          color: #110038;
-          letter-spacing: 0;
-          text-align: center;
-          line-height: 18px;
-          font-size: 16px;
-          width: 144px;
-          height: 36px;
-          margin-right: 16px;
-          background: #F7C9F3;
-          border: 1px solid #110038;
-          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF; }
-        body section .banner .botones button:hover {
-          background: #E6BBE2;
-          border: 1px solid #110038;
-          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF; }
-        body section .banner .botones button:active {
-          color: #110038;
-          background: #E6BBE2;
-          border: 1px solid #110038;
-          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF; }
-        body section .banner .botones .elegir {
-          display: flex;
-          margin-right: 16px; }
-          body section .banner .botones .elegir button {
-            margin-right: 0px; }
-          body section .banner .botones .elegir .flecha {
-            width: 36px; }
-        body section .banner .botones .opciones {
-          display: none; }
-        body section .banner .botones a {
-          text-decoration: none;
-          width: 76px;
-          font-family: "ChakraPetch-Regular", sans-serif;
-          color: #110038;
-          font-size: 16px;
-          letter-spacing: 0;
-          line-height: 18px; }
-        body section .banner .botones a:hover {
-          padding-top: 9px;
-          padding-bottom: 9px;
-          border: 1px solid #110038; }
-        body section .banner .botones a:active {
-          color: #110038;
-          border: 0px; }
-        body section .banner .botones a::first-letter {
-          text-decoration: underline; }
 
 /*# sourceMappingURL=style.css.map */
