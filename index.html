@@ -12,14 +12,14 @@
     <link rel="stylesheet" href="style/style.css">
     <title>GifOS</title>
 </head>
-<body class="body_light">
+<body class="body_day">
     <div class="titulo">
         <p>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas:</p>
     </div>
     <section class="d-flex justify-content-center mt-sm-5 mb-sm-3"> <!-- Banner -->
         <div class="d-flex justify-content-between col-11 p-0" >
             <div class="align-self-center">
-                <img src="assets/gifOF_logo.png" alt="gif.OS">
+                <img class="logo" src="assets/gifOF_logo.png" alt="gif.OS">
             </div>
             <div class="d-flex align-self-center">
                 <div class="pl-md-3"><button class="boton">Crear Guifos</button></div>
@@ -34,10 +34,9 @@
                             <button id="btn-night">Sailor Night</button>
                         </div>
                     </div>
-                    
                 </div>
                 <div class="pl-md-3 d-flex align-self-center">
-                    <a href="">Mis Gifos</a>
+                    <a class="py-md-1 pr-md-3" href="">Mis Gifos</a>
                 </div>
             </div>
         </div>
@@ -45,21 +44,23 @@
     <section class="d-flex justify-content-center mt-sm-3 mb-sm-5"> <!-- Buscador -->
         <div class="d-flex justify-content-between col-11 p-0">
             <div id="buscador" class="flex-grow-1 p-1 buscador">
-                <div class="bg-secondary px-sm-1 header">
+                <div class="bg-secondary pl-sm-1 header">
                     Buscar
                 </div>
                 <div class="d-flex p-0">
                     <input class="px-md-3 py-md-3 m-2" type="text" placeholder="Busca gifs, hashtags, temas, buscar lo que quieras...">
                 </div>
             </div>
-            
         </div>
     </section>
     <section class="d-flex justify-content-center mt-sm-3 mb-sm-5"> <!-- Sugerencias -->
-        <div class="d-flex justify-content-between col-11 p-0">
-            <div class="d-flex p-0 flex-grow-1 p-1 py-auto sugerencia">
+        <div class="d-flex flex-column col-11 p-0">
+            <div class="d-flex p-0 flex-grow-1 p-2 py-auto sugerencia">
                 <label class="flex-grow-1 my-auto px-sm-1" >Hoy te sugerimos</label>
             </div>
+            <div id="sugerencias" class="d-flex justify-content-between mt-sm-3">
+            </div>
+            
         </div>
     </section>
     <script rel="text/javascript" src="js/apps.js"></script>
