@@ -19,7 +19,7 @@
     .body_day .header .close {
       height: 14px;
       width: 16px; }
-  .body_day a {
+  .body_day .mis-gifos a {
     text-decoration: none;
     min-width: 76px;
     font-family: "ChakraPetch-Regular", sans-serif;
@@ -28,12 +28,12 @@
     letter-spacing: 0;
     line-height: 18px;
     border: 1px solid white; }
-  .body_day a:hover {
+  .body_day .mis-gifos a:hover {
     border: 1px solid #110038; }
-  .body_day a:active {
+  .body_day .mis-gifos a:active {
     color: #110038;
     border: 1px solid white; }
-  .body_day a::first-letter {
+  .body_day .mis-gifos a::first-letter {
     text-decoration: underline; }
   .body_day .boton {
     font-family: "ChakraPetch-Regular", sans-serif;
@@ -60,9 +60,28 @@
     min-width: 36px; }
   .body_day .opciones {
     display: none;
-    max-width: 160px;
+    position: absolute;
+    margin-top: 36px;
+    min-width: 180px;
     background: #E6E6E6;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
+    .body_day .opciones button {
+      text-align: left;
+      font-family: "ChakraPetch-Regular", sans-serif;
+      font-size: 16px;
+      color: #110038;
+      letter-spacing: 0;
+      line-height: 22px; }
+    .body_day .opciones button::first-letter {
+      text-decoration: underline; }
+    .body_day .opciones .button-day {
+      background: #FFF4FD;
+      border: 1px solid #CCA6C9;
+      box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF; }
+    .body_day .opciones .button-night {
+      background: #F0F0F0;
+      border: 1px solid #808080;
+      box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF; }
   .body_day .buscador {
     background: #E6E6E6;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
@@ -73,9 +92,39 @@
       box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
       font-family: "ChakraPetch-Regular", sans-serif;
       font-size: 16px;
-      color: #B4B4B4;
+      color: #110038;
       letter-spacing: 0;
       line-height: 22px; }
+    .body_day .buscador .boton-buscar {
+      font-family: "ChakraPetch-Regular", sans-serif;
+      font-size: 16px;
+      letter-spacing: 0;
+      line-height: 18px; }
+    .body_day .buscador .boton-inactivo {
+      background: #E6E6E6;
+      border: 1px solid #808080;
+      box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+      color: #B4B4B4; }
+      .body_day .buscador .boton-inactivo .lupa {
+        filter: invert(86%) sepia(0%) saturate(1%) hue-rotate(150deg) brightness(86%) contrast(88%); }
+    .body_day .buscador .boton-activo {
+      background: #F7C9F3;
+      border: 1px solid #110038;
+      box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+      color: #110038; }
+      .body_day .buscador .boton-activo .lupa {
+        filter: invert(8%) sepia(40%) saturate(4601%) hue-rotate(220deg) brightness(92%) contrast(130%); }
+    .body_day .buscador .boton-activo:hover {
+      background: #E6BBE2;
+      border: 1px solid #110038;
+      box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+      font-family: "ChakraPetch-Regular", sans-serif;
+      font-size: 16px;
+      color: #110038;
+      letter-spacing: 0;
+      line-height: 18px; }
+      .body_day .buscador .boton-activo:hover .lupa {
+        filter: invert(8%) sepia(40%) saturate(4601%) hue-rotate(220deg) brightness(92%) contrast(130%); }
   .body_day .sugerencia {
     background: #FFFAFE;
     border: 1px solid #E6BBE2;
@@ -102,6 +151,11 @@
         background: #3A72DB;
         border: 1px solid #4C2F99;
         box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF; }
+    .body_day .card-small a {
+      font-family: ChakraPetch-Bold;
+      font-size: 14px;
+      color: #FFFFFF;
+      letter-spacing: 0; }
 
 .body_night {
   background-color: #110038; }
@@ -124,7 +178,7 @@
     .body_night .header .close {
       height: 14px;
       width: 16px; }
-  .body_night a {
+  .body_night .mis-gifos a {
     text-decoration: none;
     min-width: 76px;
     font-family: "ChakraPetch-Regular", sans-serif;
@@ -132,12 +186,12 @@
     letter-spacing: 0;
     line-height: 18px;
     border: 1px solid #110038; }
-  .body_night a:hover {
+  .body_night .mis-gifos a:hover {
     border: 1px solid white; }
-  .body_night a:active {
+  .body_night .mis-gifos a:active {
     color: #110038;
     border: 1px solid #110038; }
-  .body_night a::first-letter {
+  .body_night .mis-gifos a::first-letter {
     text-decoration: underline; }
   .body_night .boton {
     font-family: "ChakraPetch-Regular", sans-serif;
@@ -165,9 +219,29 @@
     min-width: 36px; }
   .body_night .opciones {
     display: none;
-    max-width: 160px;
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
+    position: absolute;
+    margin-top: 36px;
+    min-width: 180px;
+    background: #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF; }
+    .body_night .opciones button {
+      text-align: left;
+      font-family: "ChakraPetch-Regular", sans-serif;
+      font-size: 16px;
+      color: #110038;
+      letter-spacing: 0;
+      line-height: 22px; }
+    .body_night .opciones button::first-letter {
+      text-decoration: underline; }
+    .body_night .opciones .button-day {
+      background: #CCCCCC;
+      border: 1px solid #808080;
+      box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF; }
+    .body_night .opciones .button-night {
+      color: #FFFFFF;
+      background: #2E32FB;
+      border: 1px solid rgba(51, 53, 143, 0.2);
+      box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF; }
   .body_night .buscador {
     background: #B4B4B4;
     box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF; }
@@ -181,6 +255,25 @@
       color: #B4B4B4;
       letter-spacing: 0;
       line-height: 22px; }
+    .body_night .buscador .boton-buscar {
+      font-family: "ChakraPetch-Regular", sans-serif;
+      font-size: 16px;
+      letter-spacing: 0;
+      line-height: 18px; }
+    .body_night .buscador .boton-inactivo {
+      background: #B4B4B4;
+      border: 1px solid #808080;
+      box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+      color: #8F8F8F; }
+      .body_night .buscador .boton-inactivo .lupa {
+        filter: invert(59%) sepia(0%) saturate(6%) hue-rotate(174deg) brightness(98%) contrast(79%); }
+    .body_night .buscador .boton-activo {
+      background: #EE3EFE;
+      border: 1px solid #110038;
+      box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+      color: #FFFFFF; }
+      .body_night .buscador .boton-activo .lupa {
+        filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(173deg) brightness(102%) contrast(101%); }
   .body_night .sugerencia {
     background: #FFFAFE;
     border: 1px solid #E6BBE2;
@@ -207,6 +300,12 @@
         background: #3A72DB;
         border: 1px solid #4C2F99;
         box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF; }
+    .body_night .card-small a {
+      font-family: ChakraPetch-Bold;
+      font-size: 14px;
+      color: #FFFFFF;
+      letter-spacing: 0;
+      border: none; }
 
 .logo {
   width: 102.6px;

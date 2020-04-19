@@ -14,6 +14,7 @@ function agregarEventListeners(){
 function onLoad(){
     console.log('Carga de pantalla');
     cargarSugerencias();
+    aplicarTemaNight();
 }
 
 function cargarSugerencias() {
@@ -30,7 +31,7 @@ function cargarSugerencias() {
                 sugerencia.innerHTML = `<div class=" p-1 card-small"> 
                                         <div class="header p-1">
                                             <div class="d-flex justify-content-between">
-                                                <a href="#">#${resImagen.title}</a>
+                                                <a href="#">#${resImagen.title.replace(/ /g, "").replace("GIF", "")}</a>
                                                 <img class="close align-self-center" src="/assets/button3.svg">
                                             </div>
                                         </div>
@@ -52,17 +53,39 @@ function cargarSugerencias() {
 }
 
 function aplicarTemaDay(){
-    console.log('day');
+    document.body.classList.remove('body_night');
+    document.body.classList.add('body_day');
+
+    document.getElementById("logo").src = "assets/gifOF_logo.png";
+    ocultarOpciones();
 }
 
 function aplicarTemaNight(){
-    console.log('night');
+    document.body.classList.remove('body_day');
+    document.body.classList.add('body_night');
+
+    document.getElementById("logo").src = "assets/gifOF_logo_dark.png";
+}
+
+function ocultarOpciones(){
+    const divOpciones = document.getElementsByClassName('opciones')[0];
+    divOpciones.style.display = "none";
 }
 
 function mostrarOpciones(){
-    const body = document.body;
-    body.classList.remove('body_day');
-    body.classList.add('body_night');
-    /*const divOpciones = document.getElementsByClassName('opciones')[0];
-    divOpciones.style.display = "block";*/
+    const divOpciones = document.getElementsByClassName('opciones')[0];
+    divOpciones.style.display = "block";
+}
+
+function cambiarEstiloBotonBuscar(){
+    const botonBuscar = document.getElementById('boton_buscar');
+    const inputBuscar = document.getElementById('buscar');
+
+    if(inputBuscar.value !== ''){
+        botonBuscar.classList.remove('boton-inactivo');
+        botonBuscar.classList.add('boton-activo');
+    }else{
+        botonBuscar.classList.remove('boton-activo');
+        botonBuscar.classList.add('boton-inactivo');
+    }
 }
