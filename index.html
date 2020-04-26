@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style/style.css">
     <title>GifOS</title>
 </head>
-<body class="body_night">
+<body>
     <div class="titulo">
         <p>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas:</p>
     </div>
@@ -26,7 +26,11 @@
                 <div class="d-flex flex-column pl-md-3">
                     <div class="d-inline-flex">
                         <button class="boton">Elegir Tema</button>
-                        <button class="boton arrow" onclick="mostrarOpciones()"><img src="/assets/dropdown.svg" alt="Elegir Tema"></button>
+                        <button class="boton arrow" onclick="mostrarOpciones()">
+                            <object class="m-2 flechita"type="image/svg+xml" data="./assets/dropdown.svg" class="icon icon-bike">
+                                Bike
+                              </object>
+                        </button>
                     </div>
                     <div class="opciones">
                         <div class="d-flex flex-column">

@@ -80,9 +80,14 @@
 
     .arrow{
         min-width: 36px;
+
+        .flechita{
+            filter: invert(5%) sepia(78%) saturate(3893%) hue-rotate(239deg) brightness(86%) contrast(117%);
+        }
     }
     .opciones{
         display: none;
+        z-index: 10;
         position: absolute;
         margin-top: 36px;
         min-width: 180px;

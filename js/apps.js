@@ -7,14 +7,12 @@ agregarEventListeners();
 
 function agregarEventListeners(){
     document.addEventListener('DOMContentLoaded', onLoad());
-    //btnDay.addEventListener('click', aplicarTemaDay);
-    //btnNight.addEventListener('click', aplicarTemaNight);
 }
 
 function onLoad(){
     console.log('Carga de pantalla');
     cargarSugerencias();
-    aplicarTemaNight();
+    aplicarTemaDay();
 }
 
 function cargarSugerencias() {
@@ -24,6 +22,7 @@ function cargarSugerencias() {
             return response.json();
         })
         .then(resultado => {
+            console.log(resultado);
             const divSugerencias = document.getElementById('sugerencias');
             for (let index = 0; index < 4; index++) {
                 const sugerencia = document.createElement('div');

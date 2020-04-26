@@ -58,8 +58,11 @@
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF; }
   .body_day .arrow {
     min-width: 36px; }
+    .body_day .arrow .flechita {
+      filter: invert(5%) sepia(78%) saturate(3893%) hue-rotate(239deg) brightness(86%) contrast(117%); }
   .body_day .opciones {
     display: none;
+    z-index: 10;
     position: absolute;
     margin-top: 36px;
     min-width: 180px;
@@ -217,8 +220,11 @@
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF; }
   .body_night .arrow {
     min-width: 36px; }
+    .body_night .arrow .flechita {
+      filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(173deg) brightness(102%) contrast(101%); }
   .body_night .opciones {
     display: none;
+    z-index: 10;
     position: absolute;
     margin-top: 36px;
     min-width: 180px;
