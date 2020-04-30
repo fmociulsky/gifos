@@ -13,17 +13,17 @@
     <title>GifOS</title>
 </head>
 <body>
-    <div class="titulo">
+    <div class="title">
         <p>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas:</p>
     </div>
     <section class="d-flex justify-content-center mt-sm-5 mb-sm-3"> <!-- Banner -->
         <div class="d-flex justify-content-between col-11 p-0" >
             <div class="align-self-center">
-                <img id="logo" class="logo" alt="gif.OS">
+                <a href="/"><img id="logo" class="logo" alt="gif.OS"></a>
             </div>
             <div class="d-flex align-self-center">
                 <div class="pl-md-3"><button class="boton">Crear Guifos</button></div>
-                <div class="d-flex flex-column pl-md-3">
+                <div class="d-flex flex-column pl-md-3" onmouseleave="ocultarOpciones()">
                     <div class="d-inline-flex">
                         <button class="boton">Elegir Tema</button>
                         <button class="boton arrow" onclick="mostrarOpciones()">
@@ -34,8 +34,8 @@
                     </div>
                     <div class="opciones">
                         <div class="d-flex flex-column">
-                            <button class="m-2 pl-md-3 py-md-2 button-day" id="btn-day" onclick="aplicarTemaDay()"">Sailor Day</button>
-                            <button class="m-2 pl-md-3 py-md-2 button-night" id="btn-night" onclick="onclick=aplicarTemaNight()">Sailor Night</button>
+                            <button class="m-2 pl-md-3 py-md-2 button-day" id="btn-day" onclick="aplicarTemaDay()">Sailor Day</button>
+                            <button class="m-2 pl-md-3 py-md-2 button-night" id="btn-night" onclick="aplicarTemaNight()">Sailor Night</button>
                         </div>
                     </div>
                 </div>
@@ -46,39 +46,57 @@
         </div>
     </section>
     <section class="d-flex justify-content-center mt-sm-3 mb-sm-5"> <!-- Buscador -->
-        <div class="d-flex justify-content-between col-11 p-0">
-            <div id="buscador" class="flex-grow-1 p-1 buscador">
-                <div class="bg-secondary pl-sm-1 header">
+        <div class="d-flex justify-content-between flex-column col-11 p-0" id="div_buscador">
+            <div id="buscador" class="flex-grow-1 buscador">
+                <div class="bg-secondary pl-sm-1 header m-sm-1">
                     Buscar
                 </div>
-                <div class="d-flex p-0">
-                    <input id="buscar" class="px-md-3 py-md-3 m-2" type="text" onkeyup="cambiarEstiloBotonBuscar()" 
-                    placeholder="Busca gifs, hashtags, temas, buscar lo que quieras...">
-                    <button class="m-3 py-auto d-flex boton-buscar boton-inactivo" id="boton_buscar">
-                        <div class="d-flex mr-md-3">
-                            <div>
-                                <object class="m-2 lupa"type="image/svg+xml" data="./assets/lupa.svg" class="icon icon-bike">
-                                    Bike
-                                  </object>
+                <div class="d-flex flex-wrap p-0">
+                    <div class="col-11 pr-0">
+                        <input id="buscar" class="px-md-3 py-md-3 my-2" type="text" onkeyup="cambiarEstiloBotonBuscar()" 
+                        placeholder="Busca gifs, hashtags, temas, buscar lo que quieras...">
+                    </div>
+                    <div class="col-1">
+                        <button class="my-3 d-flex boton-buscar boton-inactivo" id="boton_buscar" onclick="buscar()">
+                            <div class="d-flex">
+                                <div>
+                                    <object class="my-md-2 mr-md-2 lupa"type="image/svg+xml" data="./assets/lupa.svg">   </object>
+                                </div>
+                                <div class="mr-md-2 align-self-center">
+                                    Buscar
+                                </div>
                             </div>
-                            <div class="align-self-center">
-                                Buscar
-                            </div>
-                        </div>
-                    </button>
-                        
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="busquedas_sug" class="flex-grow-1 buscador busquedas col-12 p-0">
+                <div class="d-flex flex-wrap p-0">
+                    <div class="col-11 pr-0" id="busquedas_sug_botones">
+                        <button class="py-md-2 my-2 btn-block text-left flex-column">Busquedas 1</button>
+                        <button class="px-md-3 py-md-2 my-2 btn-block">Busquedas 2</button>
+                        <button class="px-md-3 py-md-2 my-2 btn-block">Busquedas 3</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="d-flex justify-content-center mt-sm-3 mb-sm-5"> <!-- Sugerencias -->
-        <div class="d-flex flex-column col-11 p-0">
-            <div class="d-flex p-0 flex-grow-1 p-2 py-auto sugerencia">
+    <section class="d-flex justify-content-center mt-sm-3 mb-sm-5 sugerencias" id="sec_sugerencias"> <!-- Sugerencias -->
+        <div class="flex-column col-11 p-0" id="div_sugerencias">
+            <div class="d-flex p-0 flex-grow-1 p-2 py-auto titulo">
                 <label class="flex-grow-1 my-auto px-sm-1" >Hoy te sugerimos</label>
             </div>
             <div id="sugerencias" class="d-flex justify-content-between mt-sm-3">
             </div>
-            
+        </div>
+    </section>
+    <section class="d-flex justify-content-center mt-sm-3 mb-sm-5"> <!-- Resultados -->
+        <div class="flex-column col-11 p-0" id="div_resultados">
+            <div class="d-flex p-0 flex-grow-1 p-2 py-auto titulo">
+                <label class="flex-grow-1 my-auto px-sm-1" id="titulo_resultado"></label>
+            </div>
+            <div id="resultados" class="d-flex justify-content-between flex-wrap mt-sm-3">
+            </div>
         </div>
     </section>
     <script rel="text/javascript" src="js/apps.js"></script>

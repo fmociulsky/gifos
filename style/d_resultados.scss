@@ -1,0 +1,49 @@
+.titulo{
+    background: #FFFAFE;
+    border: 1px solid #E6BBE2;
+    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+}
+
+.card-result{
+    .header{
+        display: none;
+        background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    }
+    
+
+    .imagen{
+        height: 19rem;
+        width: 19rem;
+        background-size: 100% 100%;
+        background-repeat:no-repeat;
+
+        button{
+            background: #4180F6;
+            border: 1px solid #4C2F99;
+            box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+            font-family: $font;
+            font-size: 14px;
+            color: #FFFFFF;
+            letter-spacing: 0;
+            text-align: center;
+            line-height: 18px;
+        }
+
+        button:hover{
+            background: #3A72DB;
+            border: 1px solid #4C2F99;
+            box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+        }
+    }
+
+    a{
+        font-family: ChakraPetch-Bold;
+        font-size: 14px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+    }
+
+    .marco{
+        box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    }
+}

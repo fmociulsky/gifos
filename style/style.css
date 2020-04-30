@@ -1,15 +1,16 @@
+body {
+  box-sizing: border-box;
+  border: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  body .logo {
+    width: 102.6px;
+    height: 64px; }
+
 .body_day {
   background-color: #FFFFFF; }
-  .body_day .titulo {
-    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
-    box-shadow: 0 1px 0 0 #110038; }
-    .body_day .titulo p {
-      margin: 0px;
-      padding: 3px 0px 4px 7px;
-      font-family: "ChakraPetch-Regular", sans-serif;
-      font-size: 12px;
-      color: #FFFFFF;
-      letter-spacing: 0; }
   .body_day .header {
     font-family: ChakraPetch-Bold;
     font-size: 14px;
@@ -19,6 +20,20 @@
     .body_day .header .close {
       height: 14px;
       width: 16px; }
+  .body_day #div_resultados {
+    display: none; }
+  .body_day #busquedas_sug {
+    display: none; }
+  .body_day .title {
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    box-shadow: 0 1px 0 0 #110038; }
+    .body_day .title p {
+      margin: 0px;
+      padding: 3px 0px 4px 7px;
+      font-family: "ChakraPetch-Regular", sans-serif;
+      font-size: 12px;
+      color: #FFFFFF;
+      letter-spacing: 0; }
   .body_day .mis-gifos a {
     text-decoration: none;
     min-width: 76px;
@@ -128,19 +143,23 @@
       line-height: 18px; }
       .body_day .buscador .boton-activo:hover .lupa {
         filter: invert(8%) sepia(40%) saturate(4601%) hue-rotate(220deg) brightness(92%) contrast(130%); }
-  .body_day .sugerencia {
+  .body_day .busquedas {
+    position: absolute;
+    margin-top: 94px;
+    z-index: 3; }
+  .body_day .sugerencias .titulo {
     background: #FFFAFE;
     border: 1px solid #E6BBE2;
     box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D; }
-  .body_day .card-small {
+  .body_day .sugerencias .card-small {
     background: #E6E6E6;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
-    .body_day .card-small .imagen {
-      height: 280px;
-      width: 280px;
+    .body_day .sugerencias .card-small .imagen {
+      height: 19rem;
+      width: 19rem;
       background-size: 100% 100%;
       background-repeat: no-repeat; }
-      .body_day .card-small .imagen button {
+      .body_day .sugerencias .card-small .imagen button {
         background: #4180F6;
         border: 1px solid #4C2F99;
         box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
@@ -150,28 +169,51 @@
         letter-spacing: 0;
         text-align: center;
         line-height: 18px; }
-      .body_day .card-small .imagen button:hover {
+      .body_day .sugerencias .card-small .imagen button:hover {
         background: #3A72DB;
         border: 1px solid #4C2F99;
         box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF; }
-    .body_day .card-small a {
+    .body_day .sugerencias .card-small a {
       font-family: ChakraPetch-Bold;
       font-size: 14px;
       color: #FFFFFF;
       letter-spacing: 0; }
+  .body_day .titulo {
+    background: #FFFAFE;
+    border: 1px solid #E6BBE2;
+    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D; }
+  .body_day .card-result .header {
+    display: none;
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%); }
+  .body_day .card-result .imagen {
+    height: 19rem;
+    width: 19rem;
+    background-size: 100% 100%;
+    background-repeat: no-repeat; }
+    .body_day .card-result .imagen button {
+      background: #4180F6;
+      border: 1px solid #4C2F99;
+      box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+      font-family: "ChakraPetch-Regular", sans-serif;
+      font-size: 14px;
+      color: #FFFFFF;
+      letter-spacing: 0;
+      text-align: center;
+      line-height: 18px; }
+    .body_day .card-result .imagen button:hover {
+      background: #3A72DB;
+      border: 1px solid #4C2F99;
+      box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF; }
+  .body_day .card-result a {
+    font-family: ChakraPetch-Bold;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0; }
+  .body_day .card-result .marco {
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
 
 .body_night {
   background-color: #110038; }
-  .body_night .titulo {
-    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
-    box-shadow: 0 1px 0 0 #110038; }
-    .body_night .titulo p {
-      margin: 0px;
-      padding: 3px 0px 4px 7px;
-      font-family: "ChakraPetch-Regular", sans-serif;
-      font-size: 12px;
-      color: #FFFFFF;
-      letter-spacing: 0; }
   .body_night .header {
     font-family: ChakraPetch-Bold;
     font-size: 14px;
@@ -181,6 +223,20 @@
     .body_night .header .close {
       height: 14px;
       width: 16px; }
+  .body_night #div_resultados {
+    display: none; }
+  .body_night #busquedas_sug {
+    display: none; }
+  .body_night .title {
+    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+    box-shadow: 0 1px 0 0 #110038; }
+    .body_night .title p {
+      margin: 0px;
+      padding: 3px 0px 4px 7px;
+      font-family: "ChakraPetch-Regular", sans-serif;
+      font-size: 12px;
+      color: #FFFFFF;
+      letter-spacing: 0; }
   .body_night .mis-gifos a {
     text-decoration: none;
     min-width: 76px;
@@ -258,7 +314,7 @@
       box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
       font-family: "ChakraPetch-Regular", sans-serif;
       font-size: 16px;
-      color: #B4B4B4;
+      color: #110038;
       letter-spacing: 0;
       line-height: 22px; }
     .body_night .buscador .boton-buscar {
@@ -280,6 +336,10 @@
       color: #FFFFFF; }
       .body_night .buscador .boton-activo .lupa {
         filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(173deg) brightness(102%) contrast(101%); }
+  .body_night .busquedas {
+    position: absolute;
+    margin-top: 94px;
+    z-index: 3; }
   .body_night .sugerencia {
     background: #FFFAFE;
     border: 1px solid #E6BBE2;
@@ -312,17 +372,38 @@
       color: #FFFFFF;
       letter-spacing: 0;
       border: none; }
-
-.logo {
-  width: 102.6px;
-  height: 64px; }
-
-body {
-  box-sizing: border-box;
-  border: 0px;
-  margin: 0px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; }
+  .body_night .titulo {
+    background: #FFFAFE;
+    border: 1px solid #E6BBE2;
+    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D; }
+  .body_night .card-result .header {
+    display: none;
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%); }
+  .body_night .card-result .imagen {
+    height: 19rem;
+    width: 19rem;
+    background-size: 100% 100%;
+    background-repeat: no-repeat; }
+    .body_night .card-result .imagen button {
+      background: #4180F6;
+      border: 1px solid #4C2F99;
+      box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+      font-family: "ChakraPetch-Regular", sans-serif;
+      font-size: 14px;
+      color: #FFFFFF;
+      letter-spacing: 0;
+      text-align: center;
+      line-height: 18px; }
+    .body_night .card-result .imagen button:hover {
+      background: #3A72DB;
+      border: 1px solid #4C2F99;
+      box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF; }
+  .body_night .card-result a {
+    font-family: ChakraPetch-Bold;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0; }
+  .body_night .card-result .marco {
+    box-shadow: inset -2px -2px 0 0 #5C5C5C, inset 2px 2px 0 0 #FFFFFF; }
 
 /*# sourceMappingURL=style.css.map */

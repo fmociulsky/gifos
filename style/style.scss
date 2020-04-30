@@ -1,14 +1,6 @@
 $font: 'ChakraPetch-Regular', sans-serif;
 $color: #110038;
 
-@import './style_day.scss';
-@import './style_night.scss';
-
-.logo{
-    width: 102.6px;
-    height: 64px;    
-}
-
 body{
     box-sizing: border-box;
     border: 0px;
@@ -17,6 +9,30 @@ body{
     flex-direction: column;
     justify-content: center;
 
-    
+    .logo{
+        width: 102.6px;
+        height: 64px;    
+    }
+}
+
+
+.body_day{
+    background-color: #FFFFFF;
+    @import './d_general.scss';
+    @import './d_header.scss';
+    @import './d_buscador.scss';
+    @import './d_sugerencias.scss';
+    @import './d_resultados.scss';
 
 }
+
+.body_night{
+    background-color: $color;
+    @import './n_general.scss';
+    @import './n_header.scss';
+    @import './n_buscador.scss';
+    @import './n_sugerencias.scss';
+    @import './n_resultados.scss';
+}
+
+

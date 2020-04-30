@@ -1,0 +1,105 @@
+.title{
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    box-shadow: 0 1px 0 0 #110038;
+    
+    p{
+        margin: 0px;
+        padding: 3px 0px 4px 7px;
+        font-family: $font;
+        font-size: 12px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+    }      
+}
+
+.mis-gifos{
+    a{
+        text-decoration: none;
+        min-width: 76px;
+        font-family: $font;
+        color: $color;
+        font-size: 16px;
+        letter-spacing: 0;
+        line-height: 18px;
+        border: 1px solid white;
+    }
+    a:hover{
+        border: 1px solid $color;
+    }
+    a:active{
+        color:$color;
+        border: 1px solid white;
+    }
+    a::first-letter{
+        text-decoration: underline;
+    }
+}
+
+.boton{
+    font-family: $font;
+    color: $color;
+    letter-spacing: 0;
+    line-height: 18px;
+    font-size: 16px;
+    min-width: 144px;
+    min-height: 36px;
+    max-height: 36px;
+    background: #F7C9F3;
+    border: 1px solid $color;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.boton:hover{
+    background: #E6BBE2;
+    border: 1px solid $color;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.boton:active{
+    color: $color;
+    background: #E6BBE2;
+    border: 1px solid $color;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.arrow{
+    min-width: 36px;
+
+    .flechita{
+        filter: invert(5%) sepia(78%) saturate(3893%) hue-rotate(239deg) brightness(86%) contrast(117%);
+    }
+}
+.opciones{
+    display: none;
+    z-index: 10;
+    position: absolute;
+    margin-top: 36px;
+    min-width: 180px;
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+
+    button{
+        text-align: left;
+        font-family: $font;
+        font-size: 16px;
+        color: #110038;
+        letter-spacing: 0;
+        line-height: 22px;
+    }
+
+    button::first-letter{
+        text-decoration: underline;
+    }
+
+    .button-day{
+        background: #FFF4FD;
+        border: 1px solid #CCA6C9;
+        box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+    }
+
+    .button-night{
+        background: #F0F0F0;
+        border: 1px solid #808080;
+        box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+    }
+}
