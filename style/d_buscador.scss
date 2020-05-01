@@ -57,6 +57,28 @@
             filter: invert(8%) sepia(40%) saturate(4601%) hue-rotate(220deg) brightness(92%) contrast(130%);
         }
     }
+
+    .boton_sug{
+        font-family: $font;
+        font-size: 16px;
+        color: #110038;
+        letter-spacing: 0;
+        line-height: 22px;
+        background: #F0F0F0;
+        border: 1px solid #808080;
+        box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+    }
+    
+    .boton_sug:hover{
+        font-family: $font;
+        font-size: 16px;
+        color: #110038;
+        letter-spacing: 0;
+        line-height: 22px;
+        background: #DBDBDB;
+        border: 1px solid #808080;
+        box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+    }
 }
 
 .busquedas{

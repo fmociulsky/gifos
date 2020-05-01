@@ -53,11 +53,11 @@
                 </div>
                 <div class="d-flex flex-wrap p-0">
                     <div class="col-11 pr-0">
-                        <input id="buscar" class="px-md-3 py-md-3 my-2" type="text" onkeyup="cambiarEstiloBotonBuscar()" 
+                        <input id="buscar" class="px-md-3 py-md-3 my-2" type="text" onkeyup="cambiarEstiloBotonBuscar()" onclick="checkMostrarSugBusquedas()"
                         placeholder="Busca gifs, hashtags, temas, buscar lo que quieras...">
                     </div>
                     <div class="col-1">
-                        <button class="my-3 d-flex boton-buscar boton-inactivo" id="boton_buscar" onclick="buscar()">
+                        <button class="my-3 d-flex boton-buscar boton-inactivo" id="boton_buscar" onclick="botonBuscar()">
                             <div class="d-flex">
                                 <div>
                                     <object class="my-md-2 mr-md-2 lupa"type="image/svg+xml" data="./assets/lupa.svg">   </object>
@@ -73,9 +73,6 @@
             <div id="busquedas_sug" class="flex-grow-1 buscador busquedas col-12 p-0">
                 <div class="d-flex flex-wrap p-0">
                     <div class="col-11 pr-0" id="busquedas_sug_botones">
-                        <button class="py-md-2 my-2 btn-block text-left flex-column">Busquedas 1</button>
-                        <button class="px-md-3 py-md-2 my-2 btn-block">Busquedas 2</button>
-                        <button class="px-md-3 py-md-2 my-2 btn-block">Busquedas 3</button>
                     </div>
                 </div>
             </div>

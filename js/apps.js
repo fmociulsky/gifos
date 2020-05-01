@@ -35,7 +35,6 @@ function cargarSugerencias() {
             return response.json();
         })
         .then(resultado => {
-            console.log(resultado);
             const divSugerencias = document.getElementById('sugerencias');
             resultado.data.forEach(resImagen=>{
                 let sugerencia = document.createElement('div');
@@ -53,7 +52,8 @@ function cargarSugerencias() {
                 
                 divSugerencias.appendChild(sugerencia); 
                 const divImagen = document.getElementById(`divImagen_${resImagen.id}`);
-                divImagen.style.backgroundImage = `url(${resImagen.images.fixed_height_small_still.url})`
+                
+                divImagen.style.backgroundImage = `url(${resImagen.images.downsized_medium.url})`
             });
         })
         .catch(error => {
@@ -99,8 +99,9 @@ function buscarSugBusquedas(){
         divBotones.innerHTML = "";
         resultado.data.forEach(({name}) => {
             const button = document.createElement('button');
-            button.classList = "py-md-2 my-2 btn-block text-left flex-column";
+            button.classList = "py-md-2 my-2 btn-block text-left flex-column boton_sug";
             button.innerText = name;
+            button.setAttribute('onclick', `buscar('${name}')`);
             divBotones.appendChild(button);
         })
     });
@@ -121,8 +122,12 @@ function cambiarEstiloBotonBuscar(){
     }
 }
 
-function buscar(){
+function botonBuscar(){
     const valor = document.getElementById('buscar').value;
+    buscar(valor);
+}
+
+function buscar(valor){
     if(valor != ""){
         document.getElementById("titulo_resultado").innerText = valor;
         const divResultados = document.getElementById('resultados');
@@ -149,7 +154,7 @@ function buscar(){
                                         </div>`;
                                         divResultados.appendChild(res); 
                     const divImagen = document.getElementById(`divImagen_${resImagen.id}`);
-                    divImagen.style.backgroundImage = `url(${resImagen.images.fixed_height_small_still.url})`;
+                    divImagen.style.backgroundImage = `url(${resImagen.images.downsized_medium.url})`;
                 });
             
                 const sec_sug = document.getElementById('sec_sugerencias');
@@ -172,12 +177,20 @@ function buscar(){
         });
     }else{
         console.log("ingrese un valor");
+    } 
+}
+
+function checkMostrarSugBusquedas(){
+    const valor = document.getElementById('buscar').value;
+    if(valor){
+        mostrarSugBusquedas(valor);
     }
-    
 }
 
 function mostrarSugBusquedas(valor){
-    buscarSugBusquedas(valor);
+    if(valor){
+        buscarSugBusquedas(valor);
+    }
 }
 
 function ocultarSugBusquedas(){
