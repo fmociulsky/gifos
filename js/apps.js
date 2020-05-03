@@ -24,9 +24,15 @@ function agregarEventListeners(){
 }
 
 function onLoad(){
-    console.log('Carga de pantalla');
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const theme_type = urlParams.get('theme')
+    if(theme_type && theme_type == 'night'){
+        aplicarTemaNight();  
+    }else{
+        aplicarTemaDay();
+    }
     cargarSugerencias();
-    aplicarTemaDay();
 }
 
 function cargarSugerencias() {
@@ -35,6 +41,7 @@ function cargarSugerencias() {
             return response.json();
         })
         .then(resultado => {
+            console.log(resultado);
             const divSugerencias = document.getElementById('sugerencias');
             resultado.data.forEach(resImagen=>{
                 let sugerencia = document.createElement('div');
@@ -205,4 +212,19 @@ function resaltar(elemento, tipo){
         elemento.getElementsByClassName("imagen")[0].classList.add("marco");
     }
     
+}
+
+function getStreamAndRecord () { 
+
+    navigator.mediaDevices.getUserMedia({
+        audio: false,
+        video: {
+            height: { max: 480 }
+        }
+    })
+    .then(function(stream) {
+        var video = document.getElementById("video_gif");
+        video.srcObject = stream;
+        video.play();
+    });
 }

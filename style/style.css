@@ -229,6 +229,34 @@ body {
     letter-spacing: 0; }
   .body_day .card-result .marco {
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
+  .body_day .crear-gifos .alert-crear {
+    font-family: "ChakraPetch-Regular", sans-serif;
+    font-size: 14px;
+    color: #110038;
+    letter-spacing: 0;
+    line-height: 20px;
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
+  .body_day .crear-gifos ul {
+    list-style-type: none; }
+  .body_day .crear-gifos b.oblique {
+    font-style: oblique; }
+  .body_day .crear-gifos .boton {
+    font-family: "ChakraPetch-Regular", sans-serif;
+    color: #110038;
+    letter-spacing: 0;
+    line-height: 18px;
+    font-size: 16px;
+    min-width: 144px;
+    min-height: 36px;
+    max-height: 36px;
+    background: #F7C9F3;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF; }
+  .body_day .crear-gifos .boton:hover {
+    background: #E6BBE2;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF; }
 
 .body_night {
   background-color: #110038; }
