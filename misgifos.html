@@ -9,6 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
     <link rel="stylesheet" href="style/style.css">
     <title>GifOS</title>
 </head>
@@ -21,7 +22,8 @@
             <div class="align-self-center">
                 <a href="/"><img id="logo" class="logo" alt="gif.OS"></a>
             </div>
-            <div class="d-flex align-self-center">
+            <div id="botones-banner">
+              <div class="d-flex align-self-center">
                 <div class="pl-md-3"><button class="boton">Crear Guifos</button></div>
                 <div class="d-flex flex-column pl-md-3" onmouseleave="ocultarOpciones()">
                     <div class="d-inline-flex">
@@ -42,55 +44,80 @@
                 <div class="pl-md-3 d-flex align-self-center mis-gifos">
                     <a class="py-md-1 pr-md-3" href="">Mis Gifos</a>
                 </div>
+              </div>
             </div>
+            
         </div>
     </section>
-    <section class="mt-5"> <!-- Crear Gif-->
-      <div class="d-flex justify-content-center crear-gifos">
-        <div class="col-5 p-0 alert-crear">
-          <div class="pl-sm-1 header m-sm-1">
-            <div class="d-flex justify-content-between">
-                <span>Crear Gifos</span>
+    <section class="mt-5" id="crear_gifos"> <!-- Crear Gif-->
+      <div id="alert_gifos">
+        <div class="d-flex justify-content-center crear-gifos">
+          <div class="col-5 p-0 alert-crear">
+            <div class="pl-sm-1 header m-sm-1">
+              <div class="d-flex justify-content-between">
+                  <span>Crear Gifos</span>
+              </div>
             </div>
-          </div>
-          <div class="d-flex mt-md-4">
-            <div class="d-flex p-0 col-1 justify-content-center">
-              <img src="./assets/window img.png" alt="">
+            <div class="d-flex mt-md-4">
+              <div class="d-flex p-0 col-1 justify-content-center">
+                <img src="./assets/window img.png" alt="">
+              </div>
+              <div class="col-11 p-0"><b>Aquí podrás crear tus propios guifos</b></div>
             </div>
-            <div class="col-11 p-0"><b>Aquí podrás crear tus propios guifos</b></div>
-          </div>
-          <div class="d-flex justify-content-end mt-md-3">
-            <div class="col-11 p-0">
-              <p class="col-10 p-0 m-0">Crear tu <b  class="oblique">guifo</b> es muy fácil, graba cualquier imagen con tu cámara y obtén guifos personalizados. Los pasos para crear tu guifo son:</p>
+            <div class="d-flex justify-content-end mt-md-3">
+              <div class="col-11 p-0">
+                <p class="col-10 p-0 m-0">Crear tu <b  class="oblique">guifo</b> es muy fácil, graba cualquier imagen con tu cámara y obtén guifos personalizados. Los pasos para crear tu guifo son:</p>
+              </div>
             </div>
-          </div>
-          <div class="d-flex justify-content-end">
-            <div class="col-11 p-0">
-              <ul class="p-0">
-                <li class="mt-md-3"><b>1)</b> Dar permisos de acceso a la cámara (sólo por el tiempo de uso)</li>
-                <li class="mt-md-3"><b>2)</b> Capturar tu momento guifo</li>
-                <li class="mt-md-3"><b>3)</b> Revisar el momento</li>
-                <li class="mt-md-3"><b>4)</b> Listo para subir y compartir</li>
-              </ul>
+            <div class="d-flex justify-content-end">
+              <div class="col-11 p-0">
+                <ul class="p-0">
+                  <li class="mt-md-3"><b>1)</b> Dar permisos de acceso a la cámara (sólo por el tiempo de uso)</li>
+                  <li class="mt-md-3"><b>2)</b> Capturar tu momento guifo</li>
+                  <li class="mt-md-3"><b>3)</b> Revisar el momento</li>
+                  <li class="mt-md-3"><b>4)</b> Listo para subir y compartir</li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="d-flex justify-content-end">
-            <div class="col-11 p-0">
-              <span>¿Quieres comenzar a crear tu <b class="oblique">guifos</b> ahora?</span>
+            <div class="d-flex justify-content-end">
+              <div class="col-11 p-0">
+                <span>¿Quieres comenzar a crear tu <b class="oblique">guifos</b> ahora?</span>
+              </div>
             </div>
-          </div>
-          <div class="d-flex justify-content-end m-4 mb-md-4">
-            <div class="p-0">
-              <button class="boton">Cancelar</button>
-              <button class="boton">Comenzar</button>
+            <div class="d-flex justify-content-end m-4 mb-md-4">
+              <div class="p-0">
+                <button class="boton">Cancelar</button>
+                <button class="boton" onclick="getStreamAndRecord()">Comenzar</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <!--div>
-        <button class="btn btn-primary" onclick="getStreamAndRecord()"> Video</button>
-        <video src="" id="video_gif"></video>
-      </div-->
+      <div id="video_gifos">
+        <div class="d-flex justify-content-center crear-gifos">
+          <div class="col-5 p-0 alert-crear">
+            <div class="pl-sm-1 header m-sm-1">
+              <div class="d-flex justify-content-between">
+                  <span>Un Chequeo Antes de Empezar</span>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center">
+              <div class="p-0">
+                <video class="marco-video" id="video_gif"></video>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end m-4 mb-md-4">
+              <div class="d-inline-flex">
+                <button class="boton camera">
+                    <object class="m-2"type="image/svg+xml" data="./assets/camera.svg"></object>
+                </button>
+                <button class="boton" onclick="grabarGif()">Capturar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
     </section>
     <section class="d-flex justify-content-center mt-sm-3 mb-sm-5"> <!-- Resultados -->
         <div class="flex-column col-11 p-0" id="div_resultados">

@@ -5,8 +5,8 @@
         color: #110038;
         letter-spacing: 0;
         line-height: 20px;
-        background: #E6E6E6;
-        box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; 
+        background: #B4B4B4;
+        box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
     }
     
     ul{
@@ -17,24 +17,25 @@
         font-style: oblique;
     }
     
-    .boton{
+    .boton{  
         font-family: $font;
-        color: $color;
-        letter-spacing: 0;
-        line-height: 18px;
         font-size: 16px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 18px;
         min-width: 144px;
         min-height: 36px;
         max-height: 36px;
-        background: #F7C9F3;
-        border: 1px solid $color;
-        box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+        background: #EE3EFE;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
     }
     
     .boton:hover{
-        background: #E6BBE2;
-        border: 1px solid $color;
-        box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+        background: #CE36DB;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
     }
 
     .camera{

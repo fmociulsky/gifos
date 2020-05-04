@@ -35,6 +35,17 @@ function onLoad(){
     cargarSugerencias();
 }
 
+function crearGif(){
+    let url = "/misgifos.html";
+    if(document.body.classList.contains('body_night')){
+        url = url + "?theme=night";
+    }else{
+        url = url + "?theme=day";
+    }
+    url = url + "&action=create"
+    window.location.href = url;
+}
+
 function cargarSugerencias() {
     fetch('http://api.giphy.com/v1/gifs/trending?api_key=' + apiKey + '&limit=4')
         .then(response => {
@@ -212,19 +223,4 @@ function resaltar(elemento, tipo){
         elemento.getElementsByClassName("imagen")[0].classList.add("marco");
     }
     
-}
-
-function getStreamAndRecord () { 
-
-    navigator.mediaDevices.getUserMedia({
-        audio: false,
-        video: {
-            height: { max: 480 }
-        }
-    })
-    .then(function(stream) {
-        var video = document.getElementById("video_gif");
-        video.srcObject = stream;
-        video.play();
-    });
 }
