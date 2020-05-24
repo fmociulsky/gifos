@@ -32,22 +32,35 @@ function onLoad(){
     }else{
         aplicarTemaDay();
     }
+    document.getElementById("div_resultados").style.display = "none";
     cargarSugerencias();
+    cargarTendencias();
 }
 
-function crearGif(){
+function irMisGif(action){
     let url = "/misgifos.html";
     if(document.body.classList.contains('body_night')){
         url = url + "?theme=night";
     }else{
         url = url + "?theme=day";
     }
-    url = url + "&action=create"
+    url = url + "&action=" + action;
+    window.location.href = url;
+}
+
+
+function backHome(){
+    let url = "/index.html";
+    if(document.body.classList.contains('body_night')){
+        url = url + "?theme=night";
+    }else{
+        url = url + "?theme=day";
+    }
     window.location.href = url;
 }
 
 function cargarSugerencias() {
-    fetch('http://api.giphy.com/v1/gifs/trending?api_key=' + apiKey + '&limit=4')
+    fetch('http://api.giphy.com/v1/gifs/search?q=futbol&api_key=' + apiKey + '&limit=4')
         .then(response => {
             return response.json();
         })
@@ -80,6 +93,42 @@ function cargarSugerencias() {
     return true;
 }
 
+function cargarTendencias(){
+    const divTendencias = document.getElementById('tendencias');
+    divTendencias.innerHTML = "";
+
+    fetch('http://api.giphy.com/v1/gifs/trending?api_key=' + apiKey)
+    .then(response => {
+            return response.json();
+        })
+    .then(resultado => {
+        if(resultado.data.length > 0){
+            let titulo = document.createElement('div');
+            titulo.innerHTML =    
+            resultado.data.forEach(resImagen=>{
+                let res = document.createElement('div');
+                res.innerHTML = `<div class="p-0 mb-md-3 card-result" onmouseover="resaltar(this, 'block')" onmouseout="resaltar(this, 'none')"> 
+                                        <div class="d-flex p-0 imagen" id="divImagen_${resImagen.id}">
+                                            <div class="p-1 flex-grow-1 p-0 mt-auto header">
+                                                <div class="d-flex justify-content-between">
+                                                    <a href="#">#${resImagen.title.replace(/ /g, "").replace("GIF", "")}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>`;
+                                    divTendencias.appendChild(res); 
+                const divImagen = document.getElementById(`divImagen_${resImagen.id}`);
+                divImagen.style.backgroundImage = `url(${resImagen.images.downsized_medium.url})`;
+            });
+        }
+        return resultado;
+    })
+    .catch(error => {
+        console.log(error);
+        return error;
+    });
+}
+
 function aplicarTemaDay(){
     document.body.classList.remove('body_night');
     document.body.classList.add('body_day');
@@ -108,7 +157,7 @@ function mostrarOpciones(){
 
 function buscarSugBusquedas(){
     const valor = document.getElementById('buscar').value;
-    fetch('http://api.giphy.com/v1/tags/related/' + valor + '?api_key=' + apiKey + '&limit=3')
+    fetch('http://api.giphy.com/v1/gifs/search/tags?q=' + valor + '&api_key=' + apiKey + '&limit=3')
     .then(response => {
             return response.json();
     }).then(resultado =>{
@@ -179,6 +228,11 @@ function buscar(valor){
                 if(sec_sug !=  null){
                     const padre = sec_sug.parentNode;
                     padre.removeChild(sec_sug);
+                }
+                const sec_tend = document.getElementById('sec_tendencias');
+                if(sec_tend !=  null){
+                    const padre = sec_tend.parentNode;
+                    padre.removeChild(sec_tend);
                 }
                 document.getElementById('div_resultados').style.display = "block";
             }else{

@@ -47,4 +47,26 @@
         border: 1px solid #979797;
         box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
     }
+
+    #fin_grabar{
+        display: none;
+
+        .boton{
+            font-family: $font;
+            color: $color;
+            letter-spacing: 0;
+            line-height: 18px;
+            font-size: 16px;
+            min-width: 144px;
+            min-height: 36px;
+            max-height: 36px;
+            background: #FF6161;
+            border: 1px solid #110038;
+            box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+        }
+
+        .recording{
+            min-width: 36px;
+        }
+    }
 }

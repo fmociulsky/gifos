@@ -87,7 +87,7 @@
             <div class="d-flex justify-content-end m-4 mb-md-4">
               <div class="p-0">
                 <button class="boton">Cancelar</button>
-                <button class="boton" onclick="getStreamAndRecord()">Comenzar</button>
+                <button class="boton ml-md-3" onclick="getStreamAndRecord()">Comenzar</button>
               </div>
             </div>
           </div>
@@ -104,27 +104,48 @@
             <div class="d-flex justify-content-center">
               <div class="p-0">
                 <video class="marco-video" id="video_gif"></video>
+                <img class="marco-imagen" id="image_gif"></video>
               </div>
             </div>
             <div class="d-flex justify-content-end m-4 mb-md-4">
-              <div class="d-inline-flex">
-                <button class="boton camera">
-                    <object class="m-2"type="image/svg+xml" data="./assets/camera.svg"></object>
-                </button>
-                <button class="boton" onclick="grabarGif()">Capturar</button>
+              <div id="precaptura">
+                <div class="d-inline-flex" >
+                  <button class="boton camera">
+                      <object class="m-2"type="image/svg+xml" data="./assets/camera.svg"></object>
+                  </button>
+                  <button class="boton" onclick="grabar()">Capturar</button>
+                </div>
+              </div>
+              <div id="fin_grabar">
+                <div class="d-inline-flex" >
+                  <button class="boton recording">
+                      <object class="m-2"type="image/svg+xml" data="./assets/recording.svg"></object>
+                  </button>
+                  <button class="boton" onclick="finalizarGif()">Listo</button>
+                </div>
+              </div>
+              <div id="pre_subida">
+                <div class="d-inline-flex" >
+                  <button class="boton" onclick="finalizarGif()">Repetir Captura</button>
+                  <button class="boton ml-md-3" onclick="subir()">Subir</button>
+                </div>
+              </div>
+              <div id="subida">
+                <div class="d-inline-flex">
+                  <button class="boton ml-md-3" onclick="cancelar()">Cancelar</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      
     </section>
-    <section class="d-flex justify-content-center mt-sm-3 mb-sm-5"> <!-- Resultados -->
-        <div class="flex-column col-11 p-0" id="div_resultados">
+    <section class="d-flex justify-content-center mt-sm-3 mb-sm-5"> <!-- Mis Gifos -->
+        <div class="flex-column col-11 p-0" id="div_mis_gifos">
             <div class="d-flex p-0 flex-grow-1 p-2 py-auto titulo">
-                <label class="flex-grow-1 my-auto px-sm-1" id="titulo_resultado"></label>
+                <label class="flex-grow-1 my-auto px-sm-1" id="titulo_mis_gifos">Mis Gifos</label>
             </div>
-            <div id="resultados" class="d-flex justify-content-between flex-wrap mt-sm-3">
+            <div id="mis_gifos" class="d-flex justify-content-between flex-wrap mt-sm-3">
             </div>
         </div>
     </section>

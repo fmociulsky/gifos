@@ -1,5 +1,9 @@
 agregarEventListeners();
 
+let recorder = null;
+let form = new FormData();
+let apiKey = 'ueK2jQMCymNZn085I319vMXEtEjvNFGH';
+
 function agregarEventListeners(){
     document.addEventListener('DOMContentLoaded', onLoad());
 }
@@ -15,6 +19,7 @@ function onLoad(){
     }
     displayBotonesBanner();
     displayCrearGifs();
+    cargarMisGifos();
 }
 
 function aplicarTemaDay(){
@@ -75,8 +80,21 @@ function getStreamAndRecord () {
     });
 }
 
+function grabar(){
+    document.getElementById("precaptura").style.display = "none";
+    document.getElementById("fin_grabar").style.display = "block";
+    let horaCero = new Date();
+    horaCero.setHours(0);
+    horaCero.setMinutes(0);
+    horaCero.setSeconds(0);
+    console.log(horaCero.getHours() + ":" + horaCero.getMinutes() + ":"+ horaCero.getSeconds());
+    //mueveReloj(horaCero);
+    grabarGif();
+}
+
 async function grabarGif(){
     let stream = await navigator.mediaDevices.getUserMedia({video: true, audio: false});
+
     recorder = RecordRTC(stream, {
         type: 'gif',
         frameRate: 1,
@@ -86,14 +104,86 @@ async function grabarGif(){
         onGifRecordingStarted: function() {
             console.log('started')
         },
-    }); 
+    });
     recorder.startRecording();
     console.log("inicio a grabar");
-    const sleep = m => new Promise(r => setTimeout(r, m));
-    await sleep(3000);
+}
 
+async function finalizarGif(){
     await recorder.stopRecording();
     console.log("dejo de grabar");
     let blob = await recorder.getBlob();
-    //invokeSaveAsDialog(blob);
+    form.append('file', blob, 'myGif.gif');
+    
+    console.log(blob);
+    
+
+    let image = document.getElementById("image_gif");
+    image.src = URL.createObjectURL(blob);
+    document.getElementById("fin_grabar").style.display = "none";
+    document.getElementById("pre_subida").style.display = "block";
+    document.getElementById("video_gif").style.display = "none";
+    document.getElementById("image_gif").style.display = "block";
+    
+}
+
+function subir() {
+    console.log("subir");
+    let miForm = {
+        method: 'POST',
+        body: form,
+        headers: new Headers(),
+        mode: 'cors',
+        cache: 'default'
+    };
+    const url = 'http://upload.giphy.com/v1/gifs';
+    fetch(url + '?api_key=' + apiKey, miForm)
+        .then(function (response) {
+            console.log(response);
+            return response.json();
+        })
+        .then(function (respuesta) {
+            guardarLocalStorage(respuesta.data.id);
+        });
+}
+
+function guardarLocalStorage(id){
+    console.log(id);
+    let myGifos = localStorage.getItem('myGifos');
+    if(!myGifos){
+        myGifos = id;
+    }else{
+        myGifos = myGifos + ", " + id;
+    }
+    
+    localStorage.setItem('myGifos', myGifos);
+}
+
+function cargarMisGifos() {
+    let apiKey = 'ueK2jQMCymNZn085I319vMXEtEjvNFGH';
+    let ids = localStorage.getItem('myGifos');
+    if(ids){
+        fetch('http://api.giphy.com/v1/gifs?api_key=' + apiKey + '&ids=' + ids)
+        .then(response => {
+            return response.json();
+        })
+        .then(resultado => {
+            const divSugerencias = document.getElementById('mis_gifos');
+            resultado.data.forEach(resImagen=>{
+                let sugerencia = document.createElement('div');
+                sugerencia.innerHTML = `<div class=" p-1 card-small"> 
+                                        <div class="d-flex pb-sm-2 pl-sm-1">
+                                            <img src="${resImagen.images.downsized_medium.url}" class="imagen">
+                                        </div>
+                                    </div>`;
+                
+                divSugerencias.appendChild(sugerencia);
+            });
+        })
+        .catch(error => {
+            return error;
+        });
+    }
+    
+    return true;
 }

@@ -19,10 +19,10 @@
     <section class="d-flex justify-content-center mt-sm-5 mb-sm-3"> <!-- Banner -->
         <div class="d-flex justify-content-between col-11 p-0" >
             <div class="align-self-center">
-                <a href="/"><img id="logo" class="logo" alt="gif.OS"></a>
+                <a onclick="backHome()" ><img id="logo" class="logo" alt="gif.OS"></a>
             </div>
             <div class="d-flex align-self-center">
-                <div class="pl-md-3"><button class="boton" onclick="crearGif()">Crear Guifos</button></div>
+                <div class="pl-md-3"><button class="boton" onclick="irMisGif('create')">Crear Guifos</button></div>
                 <div class="d-flex flex-column pl-md-3" onmouseleave="ocultarOpciones()">
                     <div class="d-inline-flex">
                         <button class="boton">Elegir Tema</button>
@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <div class="pl-md-3 d-flex align-self-center mis-gifos">
-                    <a class="py-md-1 pr-md-3" href="/misgifos.html">Mis Gifos</a>
+                    <a class="py-md-1 pr-md-3" onclick="irMisGif('view')">Mis Gifos</a>
                 </div>
             </div>
         </div>
@@ -58,7 +58,7 @@
                         <button class="my-3 d-flex boton-buscar boton-inactivo" id="boton_buscar" onclick="botonBuscar()">
                             <div class="d-flex">
                                 <div>
-                                    <object class="my-md-2 mr-md-2 lupa"type="image/svg+xml" data="./assets/lupa.svg">   </object>
+                                    <object class="my-md-2 mr-md-2 lupa" type="image/svg+xml" data="./assets/lupa.svg">   </object>
                                 </div>
                                 <div class="mr-md-2 align-self-center">
                                     Buscar
@@ -79,13 +79,22 @@
     <section class="d-flex justify-content-center mt-sm-3 mb-sm-5 sugerencias" id="sec_sugerencias"> <!-- Sugerencias -->
         <div class="flex-column col-11 p-0" id="div_sugerencias">
             <div class="d-flex p-0 flex-grow-1 p-2 py-auto titulo">
-                <label class="flex-grow-1 my-auto px-sm-1" >Hoy te sugerimos</label>
+                <label class="flex-grow-1 my-auto px-sm-1" >Hoy te sugerimos: Futbol</label>
             </div>
             <div id="sugerencias" class="d-flex justify-content-between mt-sm-3">
             </div>
         </div>
     </section>
-    <section class="d-flex justify-content-center mt-sm-3 mb-sm-5"> <!-- Resultados -->
+    <section class="d-flex justify-content-center mt-sm-3 mb-sm-5" id="sec_tendencias"> <!-- Tendencias -->
+        <div class="flex-column col-11 p-0" id="div_tendencias">
+            <div class="d-flex p-0 flex-grow-1 p-2 py-auto titulo">
+                <label class="flex-grow-1 my-auto px-sm-1">Tendencias</label>
+            </div>
+            <div id="tendencias" class="d-flex justify-content-between flex-wrap mt-sm-3">
+            </div>
+        </div>
+    </section>
+    <section class="d-flex justify-content-center mt-sm-3 mb-sm-5" id="sec_resultados"> <!-- Resultados -->
         <div class="flex-column col-11 p-0" id="div_resultados">
             <div class="d-flex p-0 flex-grow-1 p-2 py-auto titulo">
                 <label class="flex-grow-1 my-auto px-sm-1" id="titulo_resultado"></label>
