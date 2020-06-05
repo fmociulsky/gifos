@@ -20,18 +20,21 @@
     <section class="d-flex justify-content-center mt-sm-5 mb-sm-3"> <!-- Banner -->
         <div class="d-flex justify-content-between col-11 p-0" >
             <div class="align-self-center">
-                <a href="/"><img id="logo" class="logo" alt="gif.OS"></a>
+              <a onclick="backHome()" ><img id="logo" alt="gif.OS"></a>
             </div>
             <div id="botones-banner">
               <div class="d-flex align-self-center">
-                <div class="pl-md-3"><button class="boton">Crear Guifos</button></div>
+                <div class="pl-md-3"><button class="boton" onclick="irMisGif('create')">Crear Guifos</button></div>
                 <div class="d-flex flex-column pl-md-3" onmouseleave="ocultarOpciones()">
                     <div class="d-inline-flex">
                         <button class="boton">Elegir Tema</button>
                         <button class="boton arrow" onclick="mostrarOpciones()">
-                            <object class="m-2 flechita"type="image/svg+xml" data="./assets/dropdown.svg" class="icon icon-bike">
-                                Bike
-                              </object>
+                          <svg width="10" height="6" xmlns="http://www.w3.org/2000/svg" class="m-2 flechita">
+                              <g fill-rule="evenodd">
+                                  <path d="M5 4H4V3H3V2H2V1H1V0h9v1H9v1H8v1H7v1H6v1H5V4z"/>
+                                  <path d="M1 1h1v1h1v1h1v1h1v2H4V5H3V4H2V3H1V2H0V1h1z" fill="#FFF"/>
+                              </g>
+                          </svg>
                         </button>
                     </div>
                     <div class="opciones">
@@ -98,13 +101,42 @@
           <div class="col-5 p-0 alert-crear">
             <div class="pl-sm-1 header m-sm-1">
               <div class="d-flex justify-content-between">
-                  <span>Un Chequeo Antes de Empezar</span>
+                  <span id="titulo_gifos">Un Chequeo Antes de Empezar</span>
               </div>
             </div>
-            <div class="d-flex justify-content-center">
-              <div class="p-0">
+            <div id="media">
+              <div class="d-flex justify-content-center p-0">
                 <video class="marco-video" id="video_gif"></video>
-                <img class="marco-imagen" id="image_gif"></video>
+                <img class="marco-imagen" id="image_gif"/>
+              </div>
+            </div>
+            <div id="subiendo" class="mx-md-2">
+              <div class="d-flex justify-content-center">
+                <div class="mx-md-2 py-lg-5">
+                  <div class="d-flex justify-content-center mt-lg-5 mb-sm-3">
+                    <img src="./assets/globe_img.png"/>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <b class="subiendo-gifos">Estamos subiendo tu guifo</b>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <img src="./assets/progress_bar.gif" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="confirmacion">
+              <div class="d-flex mx-md-2">
+                <div class="d-flex mx-md-2">
+                  <div class="d-flex col 6">
+                    <img id="gif_subido"/>
+                  </div>
+                  <div class="d-flex col-6 justify-content-center flex-column">
+                    <b>Guifo creado con exito</b>
+                    <button class="boton my-md-2" onclick="copiarGif()">Copiar Enlace Guifo</button>
+                    <button class="boton my-md-2" onclick="download()">Descargar Guifo</button>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="d-flex justify-content-end m-4 mb-md-4">
@@ -126,13 +158,18 @@
               </div>
               <div id="pre_subida">
                 <div class="d-inline-flex" >
-                  <button class="boton" onclick="finalizarGif()">Repetir Captura</button>
+                  <button class="boton" onclick="getStreamAndRecord()">Repetir Captura</button>
                   <button class="boton ml-md-3" onclick="subir()">Subir</button>
                 </div>
               </div>
               <div id="subida">
                 <div class="d-inline-flex">
                   <button class="boton ml-md-3" onclick="cancelar()">Cancelar</button>
+                </div>
+              </div>
+              <div id="conf">
+                <div class="d-inline-flex">
+                  <button class="boton ml-md-3" onclick="backHome()">Listo</button>
                 </div>
               </div>
             </div>
@@ -149,6 +186,9 @@
             </div>
         </div>
     </section>
-    <script rel="text/javascript" src="js/apps2.js"></script>
+    <script rel="text/javascript" src="js/header.js"></script>
+    <script rel="text/javascript" src="js/main.js"></script>
+    <script rel="text/javascript" src="js/media.js"></script>
+    <script rel="text/javascript" src="js/misGifos.js"></script>
 </body>
 </html>

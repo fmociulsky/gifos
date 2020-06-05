@@ -27,7 +27,12 @@
                     <div class="d-inline-flex">
                         <button class="boton">Elegir Tema</button>
                         <button class="boton arrow" onclick="mostrarOpciones()">
-                            <object class="m-2 flechita"type="image/svg+xml" data="./assets/dropdown.svg"></object>
+                            <svg width="10" height="6" xmlns="http://www.w3.org/2000/svg" class="m-2 flechita">
+                                <g fill-rule="evenodd">
+                                    <path d="M5 4H4V3H3V2H2V1H1V0h9v1H9v1H8v1H7v1H6v1H5V4z"/>
+                                    <path d="M1 1h1v1h1v1h1v1h1v2H4V5H3V4H2V3H1V2H0V1h1z" fill="#FFF"/>
+                                </g>
+                            </svg>
                         </button>
                     </div>
                     <div class="opciones">
@@ -58,7 +63,9 @@
                         <button class="my-3 d-flex boton-buscar boton-inactivo" id="boton_buscar" onclick="botonBuscar()">
                             <div class="d-flex">
                                 <div>
-                                    <object class="my-md-2 mr-md-2 lupa" type="image/svg+xml" data="./assets/lupa.svg">   </object>
+                                    <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" class="my-md-2 mr-md-2 lupa">
+                                        <path d="M7.1 1.8H3.6V0h5.3v1.8H7zm3.6 1.8H8.9V1.8h1.8v1.8zm0 7h1.7v1.8h-1.7v-1.7zM8.9 9h1.8v1.8H8.9V8.9zM10.7 7V3.6h1.7v5.3h-1.7V7zM3.6 1.8v1.8H1.8V1.8h1.8zm8.8 10.6h1.8v1.8h-1.8v-1.8zm1.8 1.8H16V16h-1.8v-1.8zm-8.9-3.5H9v1.7H3.6v-1.7h1.7zM1.8 5.3V9H0V3.6h1.8v1.7zm0 3.6h1.8v1.8H1.8V8.9z" fill-rule="nonzero"/>
+                                    </svg>
                                 </div>
                                 <div class="mr-md-2 align-self-center">
                                     Buscar
@@ -103,6 +110,9 @@
             </div>
         </div>
     </section>
+    <script rel="text/javascript" src="js/header.js"></script>
+    <script rel="text/javascript" src="js/main.js"></script>
+    <script rel="text/javascript" src="js/busqueda.js"></script>
     <script rel="text/javascript" src="js/apps.js"></script>
 </body>
 </html>
