@@ -77,7 +77,7 @@ function subir() {
         mode: 'cors',
         cache: 'default'
     };
-    const url = 'http://upload.giphy.com/v1/gifs';
+    const url = 'https://upload.giphy.com/v1/gifs';
     fetch(url + '?api_key=' + apiKey, miForm)
         .then(function (response) {
             console.log(response);

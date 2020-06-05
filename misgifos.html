@@ -20,14 +20,14 @@
     <section class="d-flex justify-content-center mt-sm-5 mb-sm-3"> <!-- Banner -->
         <div class="d-flex justify-content-between col-11 p-0" >
             <div class="align-self-center">
-              <a onclick="backHome()" ><img id="logo" alt="gif.OS"></a>
+              <a onclick="backHome()"><img id="logo" class="logo" alt="gif.OS" src="assets/gifOF_logo.png"></a>
             </div>
             <div id="botones-banner">
               <div class="d-flex align-self-center">
                 <div class="pl-md-3"><button class="boton" onclick="irMisGif('create')">Crear Guifos</button></div>
                 <div class="d-flex flex-column pl-md-3" onmouseleave="ocultarOpciones()">
                     <div class="d-inline-flex">
-                        <button class="boton">Elegir Tema</button>
+                        <button class="boton" onclick="mostrarOpciones()">Elegir Tema</button>
                         <button class="boton arrow" onclick="mostrarOpciones()">
                           <svg width="10" height="6" xmlns="http://www.w3.org/2000/svg" class="m-2 flechita">
                               <g fill-rule="evenodd">
@@ -63,7 +63,7 @@
             </div>
             <div class="d-flex mt-md-4">
               <div class="d-flex p-0 col-1 justify-content-center">
-                <img src="./assets/window img.png" alt="">
+                <img src="./assets/window_img.png" alt="">
               </div>
               <div class="col-11 p-0"><b>Aquí podrás crear tus propios guifos</b></div>
             </div>
@@ -107,20 +107,20 @@
             <div id="media">
               <div class="d-flex justify-content-center p-0">
                 <video class="marco-video" id="video_gif"></video>
-                <img class="marco-imagen" id="image_gif"/>
+                <img class="marco-imagen" id="image_gif" src="gif.gif" alt="chequear el gif"/>
               </div>
             </div>
             <div id="subiendo" class="mx-md-2">
               <div class="d-flex justify-content-center">
                 <div class="mx-md-2 py-lg-5">
                   <div class="d-flex justify-content-center mt-lg-5 mb-sm-3">
-                    <img src="./assets/globe_img.png"/>
+                    <img src="./assets/globe_img.png" alt="subiendo"/>
                   </div>
                   <div class="d-flex justify-content-center">
                     <b class="subiendo-gifos">Estamos subiendo tu guifo</b>
                   </div>
                   <div class="d-flex justify-content-center">
-                    <img src="./assets/progress_bar.gif" alt="">
+                    <img src="./assets/progress_bar.gif" alt="subiendo">
                   </div>
                 </div>
               </div>
@@ -129,7 +129,7 @@
               <div class="d-flex mx-md-2">
                 <div class="d-flex mx-md-2">
                   <div class="d-flex col 6">
-                    <img id="gif_subido"/>
+                    <img id="gif_subido" alt="gif subido" src="gif.gif"/>
                   </div>
                   <div class="d-flex col-6 justify-content-center flex-column">
                     <b>Guifo creado con exito</b>
