@@ -36,7 +36,7 @@ function onLoad(){
 }
 
 function cargarSugerencias() {
-    fetch('http://api.giphy.com/v1/gifs/search?q=futbol&api_key=' + apiKey + '&limit=4')
+    fetch('https://api.giphy.com/v1/gifs/search?q=futbol&api_key=' + apiKey + '&limit=4')
         .then(response => {
             return response.json();
         })
@@ -72,7 +72,7 @@ function cargarTendencias(){
     const divTendencias = document.getElementById('tendencias');
     divTendencias.innerHTML = "";
 
-    fetch('http://api.giphy.com/v1/gifs/trending?api_key=' + apiKey)
+    fetch('https://api.giphy.com/v1/gifs/trending?api_key=' + apiKey)
     .then(response => {
             return response.json();
         })

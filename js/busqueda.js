@@ -1,6 +1,6 @@
 function buscarSugBusquedas(){
     const valor = document.getElementById('buscar').value;
-    fetch('http://api.giphy.com/v1/gifs/search/tags?q=' + valor + '&api_key=' + apiKey + '&limit=3')
+    fetch('https://api.giphy.com/v1/gifs/search/tags?q=' + valor + '&api_key=' + apiKey + '&limit=3')
     .then(response => {
             return response.json();
     }).then(resultado =>{
@@ -44,7 +44,7 @@ function buscar(valor){
         const divResultados = document.getElementById('resultados');
         divResultados.innerHTML = "";
 
-        fetch('http://api.giphy.com/v1/gifs/search?q=' + valor + '&api_key=' + apiKey)
+        fetch('https://api.giphy.com/v1/gifs/search?q=' + valor + '&api_key=' + apiKey)
         .then(response => {
                 return response.json();
             })
@@ -88,11 +88,8 @@ function buscar(valor){
             return resultado;
         })
         .catch(error => {
-            console.log(error);
             return error;
         });
-    }else{
-        console.log("ingrese un valor");
     } 
 }
 

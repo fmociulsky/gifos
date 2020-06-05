@@ -46,7 +46,7 @@ function cargarMisGifos() {
     let apiKey = 'ueK2jQMCymNZn085I319vMXEtEjvNFGH';
     let ids = localStorage.getItem('myGifos');
     if(ids){
-        fetch('http://api.giphy.com/v1/gifs?api_key=' + apiKey + '&ids=' + ids)
+        fetch('https://api.giphy.com/v1/gifs?api_key=' + apiKey + '&ids=' + ids)
         .then(response => {
             return response.json();
         })
