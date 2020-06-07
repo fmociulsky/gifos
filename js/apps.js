@@ -33,6 +33,7 @@ function onLoad(){
     document.getElementById("div_resultados").style.display = "none";
     cargarSugerencias();
     cargarTendencias();
+    actualizarHistorial();
 }
 
 function cargarSugerencias() {

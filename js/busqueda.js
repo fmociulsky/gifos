@@ -32,8 +32,39 @@ function cambiarEstiloBotonBuscar(){
     }
 }
 
+function actualizarHistorial(){
+    let historial = localStorage.getItem('historial');
+    if(historial){
+        let busquedas = historial.split(";");
+        let div_historial = document.getElementById("historial");
+        div_historial.innerHTML = "";
+        busquedas.forEach(b=>{
+            let busc = document.createElement('button');
+            busc.classList.add("hist-busc","py-2","pl-2","pr-md-3","mr-3");
+            busc.innerText = "#" + b;
+            busc.onclick = buscarHistorial;
+            div_historial.appendChild(busc);
+        });
+    }
+}
+
+function buscarHistorial(evt){
+    let targetElement = evt.target;
+    targetElement.innerText = targetElement.innerText.replace("#", "");
+    buscar(targetElement.innerText)
+}
+
 function botonBuscar(){
     const valor = document.getElementById('buscar').value;
+    let historial = localStorage.getItem('historial');
+    if(historial){
+        historial = historial + ";" + valor;
+    }else{
+        historial = valor;
+    }
+    
+    localStorage.setItem('historial', historial);
+    actualizarHistorial();
     buscar(valor);
 }
 
