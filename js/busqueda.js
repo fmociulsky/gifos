@@ -11,7 +11,7 @@ function buscarSugBusquedas(){
             const button = document.createElement('button');
             button.classList = "py-md-2 my-2 btn-block text-left flex-column boton_sug";
             button.innerText = name;
-            button.setAttribute('onclick', `buscar('${name}')`);
+            button.setAttribute('onclick', `useSugerencia('${name}')`);
             divBotones.appendChild(button);
         })
     });
@@ -62,10 +62,22 @@ function botonBuscar(){
     }else{
         historial = valor;
     }
-    
     localStorage.setItem('historial', historial);
     actualizarHistorial();
     buscar(valor);
+}
+
+function useSugerencia(valor){
+    let historial = localStorage.getItem('historial');
+    if(historial){
+        historial = historial + ";" + valor;
+    }else{
+        historial = valor;
+    }
+    localStorage.setItem('historial', historial);
+    actualizarHistorial();
+    buscar(valor);
+
 }
 
 function buscar(valor){
