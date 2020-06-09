@@ -3,7 +3,7 @@ function aplicarTemaDay(){
     document.body.classList.remove('body_night');
     document.body.classList.add('body_day');
 
-    document.getElementById("logo").src = "assets/gifOF_logo.png";
+    document.getElementById("logo").src = "./assets/gifOF_logo.png";
     ocultarOpciones();
 }
 
@@ -12,7 +12,7 @@ function aplicarTemaNight(){
     document.body.classList.remove('body_day');
     document.body.classList.add('body_night');
 
-    document.getElementById("logo").src = "assets/gifOF_logo_dark.png";
+    document.getElementById("logo").src = "./assets/gifOF_logo_dark.png";
     ocultarOpciones();
 }
 

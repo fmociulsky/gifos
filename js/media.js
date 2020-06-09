@@ -12,7 +12,7 @@ function getStreamAndRecord () {
     navigator.mediaDevices.getUserMedia({
         audio: false,
         video: {
-            height: { max: 480 }
+            height: { max: 400 }
         }
     })
     .then(function(stream) {

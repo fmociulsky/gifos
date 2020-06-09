@@ -49,7 +49,7 @@ function cargarSugerencias() {
                                         <div class="header p-1">
                                             <div class="d-flex justify-content-between">
                                                 <a href="#">#${resImagen.title.replace(/ /g, "").replace("GIF", "")}</a>
-                                                <img class="close align-self-center" src="/assets/button3.svg">
+                                                <img class="close align-self-center" src="./assets/button3.svg">
                                             </div>
                                         </div>
                                         <div class="d-flex pb-sm-2 pl-sm-1 imagen" id="divImagen_${resImagen.id}">
