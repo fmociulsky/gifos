@@ -280,8 +280,8 @@ body {
     background: #FFFFFF;
     border: 1px solid #979797;
     box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
-    width: 640px;
-    height: 480px; }
+    width: 35rem;
+    height: 30rem; }
   .body_day .crear-gifos #fin_grabar {
     display: none; }
     .body_day .crear-gifos #fin_grabar .boton {
@@ -314,6 +314,8 @@ body {
     letter-spacing: 0;
     text-align: center;
     line-height: 22px; }
+  .body_day #gif_subido {
+    width: 18rem; }
   .body_day #div_mis_gifos img {
     height: 19rem;
     width: 19rem;
